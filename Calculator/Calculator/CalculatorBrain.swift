@@ -93,4 +93,4 @@ struct CalculatorBrain {
             return accumulator
         }
     }
-
+}
