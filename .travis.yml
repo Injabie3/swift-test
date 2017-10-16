@@ -3,7 +3,6 @@ xcode_project: Calculator/Calculator.xcodeproj # path to your xcodeproj folder
 xcode_scheme: CalculatorTests
 
 before_install:
-  - brew update
   - brew install tailor
 script:
   - tailor Calculator
