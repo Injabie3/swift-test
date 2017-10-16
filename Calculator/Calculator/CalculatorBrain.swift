@@ -27,14 +27,14 @@ struct CalculatorBrain {
         "√": Operation.unaryOperation(sqrt),
         "cos": Operation.unaryOperation(cos),
         "sin": Operation.unaryOperation(sin),
-        "±": Operation.unaryOperation{ -$0 },
+        "±": Operation.unaryOperation { -$0 },
         // HOLY IN LINE FUNCTIONS ARE COOL! Lecture 02: 1:10:55
         // This function can be made more simple, from this:
-        "×": Operation.binaryOperation{ (op1: Double, op2) -> Double in return op1 * op2 },
+        "×": Operation.binaryOperation { (op1: Double, op2) -> Double in return op1 * op2 },
         // To this:
-        "+": Operation.binaryOperation{ $0 + $1 },
-        "-": Operation.binaryOperation{ $0 - $1 },
-        "÷": Operation.binaryOperation{ $0 / $1 },
+        "+": Operation.binaryOperation { $0 + $1 },
+        "-": Operation.binaryOperation { $0 - $1 },
+        "÷": Operation.binaryOperation { $0 / $1 },
         "=": Operation.equals
     ]
 
@@ -52,14 +52,15 @@ struct CalculatorBrain {
     }
 
     private var pendingBinaryOperation: PendingBinaryOperation? // Notice how we set this as an optional, because we're not always in the middle of a binary operation! Lecture 02: 1:02:50
-    
+
     private struct PendingBinaryOperation {
         let function: (Double, Double) -> Double
         let firstOperand: Double
-        
+
         func perform(with secondOperand: Double) -> Double {
             return function(firstOperand, secondOperand)
         }
+        
     }
 
     mutating func performOperation(_ symbol: String) {
@@ -82,7 +83,7 @@ struct CalculatorBrain {
                 performPendingBinaryOperation()
             }
         }
-        //case "√":
+        // case "√":
 
     }
 
