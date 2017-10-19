@@ -1,6 +1,7 @@
 language: objective-c
 xcode_project: Calculator/Calculator.xcodeproj # path to your xcodeproj folder
-xcode_scheme: CalculatorTests
+xcode_scheme: Calculator
+xcode_sdk: iphonesimulator10.1
 
 before_install:
   - brew install tailor
