@@ -1,4 +1,5 @@
 language: objective-c
+osx_image: xcode8.3
 xcode_project: Calculator/Calculator.xcodeproj # path to your xcodeproj folder
 xcode_scheme: Calculator
 xcode_sdk: iphonesimulator10.1
